@@ -1,33 +1,42 @@
-import type { HardhatUserConfig } from 'hardhat/config'
-import '@nomicfoundation/hardhat-toolbox'
-import '@nomicfoundation/hardhat-verify'
-import { vars } from 'hardhat/config'
+import hardhatIgnition from '@nomicfoundation/hardhat-ignition'
+import hardhatKeystore from '@nomicfoundation/hardhat-keystore'
+import hardhatNodeTestRunner from '@nomicfoundation/hardhat-node-test-runner'
+import hardhatViem from '@nomicfoundation/hardhat-viem'
+import { configVariable, defineConfig } from 'hardhat/config'
+import hardhatPolkaVM from '@avalix/hardhat-polkavm'
 
 // https://docs.polkadot.com/smart-contracts/dev-environments/hardhat/
-const config: HardhatUserConfig = {
-  solidity: '0.8.28',
+export default defineConfig({
+  plugins: [
+    hardhatPolkaVM,
+    hardhatKeystore,
+    hardhatIgnition,
+    hardhatNodeTestRunner,
+    hardhatViem,
+  ],
+  solidity: '0.8.29',
+  // The presence of this block switches Solidity compilation from solc (EVM) to
+  // resolc (PolkaVM) — the bytecode Polkadot Hub actually runs. Remove it to
+  // compile for the EVM as usual.
+  resolc: {
+    // "npm" is self-contained and works on every platform. Switch to "binary"
+    // for the faster native compiler on macOS / Linux x64 / Windows x64.
+    compilerSource: 'npm',
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    },
+  },
   networks: {
-    polkadotTestnet: {
+    // Polkadot Hub TestNet — chainId 420420417 / 0x190f1b41, the chain the
+    // Next.js app talks to. Token: PAS · Faucet: https://faucet.polkadot.io/
+    polkadotHubTestnet: {
+      type: 'http',
       url: 'https://services.polkadothub-rpc.com/testnet',
       chainId: 420420417,
-      accounts: vars.has('PRIVATE_KEY') ? [vars.get('PRIVATE_KEY')] : [],
+      // Stored in the encrypted keystore: `npx hardhat keystore set PRIVATE_KEY`
+      // (see the README). An exported PRIVATE_KEY env var also works.
+      accounts: [configVariable('PRIVATE_KEY')],
     },
   },
-  etherscan: {
-    apiKey: {
-      polkadotTestnet: 'no-api-key-needed',
-    },
-    customChains: [
-      {
-        network: 'polkadotTestnet',
-        chainId: 420420417,
-        urls: {
-          apiURL: 'https://blockscout-testnet.polkadot.io/api',
-          browserURL: 'https://blockscout-testnet.polkadot.io/',
-        },
-      },
-    ],
-  },
-}
-
-export default config
+})

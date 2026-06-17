@@ -2,18 +2,24 @@
   "name": "hardhat",
   "version": "0.1.0",
   "private": true,
-  "description": "Hardhat workspace for Polkadot Hub smart contracts",
+  "type": "module",
+  "description": "Hardhat workspace for Polkadot Hub smart contracts (PolkaVM)",
   "license": "MIT",
   "scripts": {
     "compile": "hardhat compile && node scripts/export-abi.mjs",
+    "clean": "hardhat clean",
     "test": "hardhat test",
-    "deploy": "hardhat ignition deploy ./ignition/modules/DemoModule.ts --network polkadotTestnet"
+    "deploy": "hardhat ignition deploy ./ignition/modules/DemoModule.ts --network polkadotHubTestnet"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
-    "@nomicfoundation/hardhat-verify": "^2.1.3",
+    "@avalix/hardhat-polkavm": "^0.2.1",
+    "@nomicfoundation/hardhat-ignition": "^3.1.7",
+    "@nomicfoundation/hardhat-keystore": "^3.0.12",
+    "@nomicfoundation/hardhat-node-test-runner": "^3.0.17",
+    "@nomicfoundation/hardhat-viem": "^3.0.9",
     "@types/node": "^22.19.19",
-    "hardhat": "^2.28.6",
-    "typescript": "^5.9.3"
+    "hardhat": "^3.9.0",
+    "typescript": "^5.9.3",
+    "viem": "^2.52.0"
   }
 }

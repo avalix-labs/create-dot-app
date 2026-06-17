@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "resolveJsonModule": true,
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["es2023"],
+    "types": ["node"],
     "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true
   },
-  "include": ["./hardhat.config.ts", "./scripts", "./test", "./ignition"]
+  "include": [
+    "hardhat.config.ts",
+    "ignition",
+    "test",
+    "artifacts/**/*.d.ts"
+  ]
 }
