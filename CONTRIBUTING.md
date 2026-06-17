@@ -54,7 +54,8 @@ create-dot-app/
 │   └── package.json       # CLI package config
 ├── templates/             # Project templates
 │   ├── next/             # Solidity (Next.js + Wagmi, Polkadot Hub EVM)
-│   └── next-papi/        # Substrate (Next.js + PAPI light client)
+│   ├── next-papi/        # Substrate (Next.js + PAPI light client)
+│   └── nuxt/             # Solidity (Nuxt + Wagmi, Polkadot Hub EVM)
 ├── docs/                  # Documentation site
 └── package.json          # Root package config
 ```

@@ -22,6 +22,8 @@ jobs:
           filters: |
             next:
               - 'templates/next/**'
+            nuxt:
+              - 'templates/nuxt/**'
 
       - name: Set matrix based on changes
         id: set-matrix

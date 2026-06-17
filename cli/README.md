@@ -18,6 +18,12 @@ Choose the Polkadot stack you want to build with:
 - **[smoldot](https://github.com/smol-dot/smoldot)** light client transport
 - Connect Wallet plus a sample `system.remark` extrinsic, wired out of the box
 
+### 💚 Solidity (Nuxt) - `nuxt`
+- **Nuxt** (Vue 3) with Tailwind CSS, rendered as a client-side SPA
+- **[Web3Auth](https://web3auth.io/)** social/embedded wallet login
+- **[Wagmi for Vue](https://wagmi.sh/vue)** for EVM wallet and contract interactions
+- **Solidity** smart contracts on Polkadot Hub (EVM)
+
 ### 📦 Package Manager Support
 Compatible with npm, yarn, pnpm, and bun
 
@@ -38,7 +44,7 @@ Create a new Polkadot dApp project with interactive prompts:
 npx create-dot-app@latest
 ```
 
-Enter your project name when prompted, then pick a stack: **Solidity** (`next`) or **Substrate (PAPI)** (`next-papi`).
+Enter your project name when prompted, then pick a stack: **Solidity** (`next`), **Substrate (PAPI)** (`next-papi`), or **Solidity (Nuxt)** (`nuxt`).
 
 ### Non-Interactive Mode
 
@@ -53,6 +59,9 @@ npx create-dot-app@latest my-dapp --template next
 
 # Substrate dapp, PAPI SDK (Polkadot native)
 npx create-dot-app@latest my-dapp --template next-papi
+
+# Solidity dapp on Nuxt (Polkadot Hub EVM)
+npx create-dot-app@latest my-dapp --template nuxt
 ```
 
 ### CLI Options
@@ -68,6 +77,7 @@ npx create-dot-app@latest my-dapp --template next-papi
 
 - `next` - Solidity (Next.js + Web3Auth + Wagmi, Polkadot Hub EVM)
 - `next-papi` - Substrate (Next.js + PAPI light client, Polkadot native)
+- `nuxt` - Solidity (Nuxt + Web3Auth + Wagmi, Polkadot Hub EVM)
 
 ## Quick Start
 
@@ -78,6 +88,7 @@ npx create-dot-app@latest
 # Non-interactive with a specific template
 npx create-dot-app@latest my-dapp --template next         # Solidity
 npx create-dot-app@latest my-dapp --template next-papi    # Substrate (PAPI)
+npx create-dot-app@latest my-dapp --template nuxt         # Solidity (Nuxt)
 
 # Navigate to project directory
 cd my-dapp
