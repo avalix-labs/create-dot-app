@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# nuxt
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+logs
+*.log
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# editor / vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# hardhat (contracts/)
+contracts/node_modules
+contracts/cache
+contracts/artifacts
+contracts/typechain-types
+contracts/coverage
+contracts/ignition/deployments

@@ -22,10 +22,16 @@ describe('template selector', () => {
     isCancelMock.mockReturnValue(false)
   })
 
-  it('offers Solidity (next) and the Substrate stack (next-papi)', () => {
+  it('offers Solidity (next), the Substrate stack (next-papi), and Nuxt (nuxt)', () => {
     const byValue = Object.fromEntries(templateOptions.map(o => [o.value, o.label]))
     expect(byValue.next).toBe('Solidity')
     expect(byValue['next-papi']).toBe('Substrate (PAPI)')
+    expect(byValue.nuxt).toBe('Solidity (Nuxt)')
+  })
+
+  it('honors the nuxt template without prompting', async () => {
+    expect(await pickTemplate('nuxt')).toBe('nuxt')
+    expect(selectMock).not.toHaveBeenCalled()
   })
 
   it('returns the chosen template in interactive mode', async () => {

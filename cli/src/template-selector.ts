@@ -15,6 +15,11 @@ export const templateOptions: SelectOptions<string>['options'] = [
     label: 'Substrate (PAPI)',
     hint: 'Next.js + PAPI light client, Polkadot native',
   },
+  {
+    value: 'nuxt',
+    label: 'Solidity (Nuxt)',
+    hint: 'Nuxt + Web3Auth + Wagmi, Polkadot Hub EVM',
+  },
 ]
 
 export async function pickTemplate(providedTemplate?: string, interactive = true): Promise<string> {

@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "compile:contracts": "cd contracts && npm run compile",
+    "test:contracts": "cd contracts && npm run test",
+    "deploy:contracts": "cd contracts && npm run deploy"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.101.0",
+    "@wagmi/vue": "^0.5.17",
+    "@web3auth/modal": "^10.16.0",
+    "nuxt": "^4.4.8",
+    "viem": "^2.52.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.9.0",
+    "@tailwindcss/vite": "^4",
+    "@types/node": "^22.19.19",
+    "eslint": "^9.39.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vue-tsc": "^2.2.0"
+  }
+}
