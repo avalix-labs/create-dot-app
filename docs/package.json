@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^6.4.3",
-    "astro-takumi": "^1.1.12"
+    "astro": "^7.0.5",
+    "astro-takumi": "^1.1.13"
   },
   "devDependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
