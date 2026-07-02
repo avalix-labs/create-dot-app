@@ -1,5 +1,15 @@
 # create-dot-app
 
+## 3.1.0
+
+### Minor Changes
+
+- [#328](https://github.com/avalix-labs/create-dot-app/pull/328) [`1a6bdc5`](https://github.com/avalix-labs/create-dot-app/commit/1a6bdc5f73d2f6b21826c269371e99250755afd0) Thanks [@preschian](https://github.com/preschian)! - feat(cli): add the `nuxt` template — a Nuxt (Vue 3) port of the Solidity / Polkadot Hub EVM starter. Selectable as "Solidity (Nuxt)" in the interactive prompt or via `--template nuxt`. It reproduces the Next.js welcome screen using `@wagmi/vue` + `@web3auth/modal/vue` + `@tanstack/vue-query` and reuses the Hardhat/PolkaVM contracts workspace, running as a client SPA.
+
+### Patch Changes
+
+- [#331](https://github.com/avalix-labs/create-dot-app/pull/331) [`e27c9bc`](https://github.com/avalix-labs/create-dot-app/commit/e27c9bc13378117e762e731e697749d9712d24b8) Thanks [@preschian](https://github.com/preschian)! - chore(deps): upgrade dependencies. Bumps runtime deps (`@clack/prompts`, `fs-extra`, `giget`) and dev tooling (`@antfu/eslint-config`, `@types/node`, `eslint`, `tsdown`, `vitest`) in the CLI, plus `astro` (6 → 7) and `astro-takumi` in docs and `@avalix/chroma`, `@playwright/test`, `@types/node` at the root.
+
 ## 3.0.0
 
 ### Major Changes
