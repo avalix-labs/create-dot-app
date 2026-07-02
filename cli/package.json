@@ -34,20 +34,20 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@clack/prompts": "^1.5.0",
-    "fs-extra": "^11.3.5",
-    "giget": "^3.2.0",
+    "@clack/prompts": "^1.6.0",
+    "fs-extra": "^11.3.6",
+    "giget": "^3.3.0",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.0.0",
+    "@antfu/eslint-config": "^9.1.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^25.9.1",
-    "eslint": "^10.4.1",
+    "@types/node": "^26.1.0",
+    "eslint": "^10.6.0",
     "strip-ansi": "^7.2.0",
-    "tsdown": "^0.22.1",
+    "tsdown": "^0.22.3",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.9"
   }
 }
