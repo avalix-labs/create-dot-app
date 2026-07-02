@@ -10,6 +10,7 @@ packages:
 # `onlyBuiltDependencies` is the v10 form, so both are listed to cover either.
 allowBuilds:
   bufferutil: true
+  esbuild: true
   keccak: true
   secp256k1: true
   sharp: true
@@ -18,6 +19,7 @@ allowBuilds:
   utf-8-validate: true
 onlyBuiltDependencies:
   - bufferutil
+  - esbuild
   - keccak
   - secp256k1
   - sharp
