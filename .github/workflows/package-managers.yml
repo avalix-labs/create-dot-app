@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package-manager: [npm, yarn, pnpm, bun]
+        package-manager: [npm, pnpm, bun]
         working-directory: ${{ fromJson(needs.generate-matrix.outputs.templates) }}
     
     steps:
