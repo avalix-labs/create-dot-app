@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.0.5",
-    "astro-takumi": "^1.1.13"
+    "astro-takumi": "^2.0.1"
   },
   "devDependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
